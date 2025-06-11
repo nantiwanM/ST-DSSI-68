@@ -4,7 +4,7 @@
 
 **2. สร้าง virtual environment สำหรับ Windows**  
 - python -m venv venv
-- .venv\Scripts\activate
+- .\venv\Scripts\Activate
 
 **3. ติดตั้ง Python Dependencies**
 - pip install -r requirements.txt
