@@ -1,5 +1,6 @@
 **1. Clone โปรเจคจาก GitHub**
-- gh repo clone nantiwan47/CNStyleShop
+- gh repo clone nantiwanM/ST-DSSI-68
+- cd ST-DSSI-68
 - cd CNStyleShop
 
 **2. สร้าง virtual environment สำหรับ Windows**  
