@@ -19,13 +19,16 @@
 - cd ..
 
 **6. ส่วน database**
+
   เปิด MySQL Workbench และเชื่อมต่อกับเซิร์ฟเวอร์ MySQL สร้าง Schema ใหม่โดยใช้ชื่อ **cnstyleshop** และหากไม่มี MySQL หรือไม่ต้องการใช้ MySQL ไปที่โปรเจกต์ Django (โฟลเดอร์ CNStyleShop) เปิดไฟล์ settings.py ตรงบรรทัดที่ 113 (หรือส่วนที่กำหนดค่า DATABASES) แก้ไขการตั้งค่า DATABASES เพื่อใช้ SQLite แทน MySQL โดยเปลี่ยนเป็น
 - DATABASES['default'] = DATABASES['sqlite3']
   
 **7. ถ้าใช้ database sqlite3**
+
   ให้ไปทำข้อที่ 9 ได้เลย
   
 **8. ถ้าใช้ database MySql**
+
   ทำการ migrate database
   -  python manage.py makemigrations
   -  python manage.py migrate
