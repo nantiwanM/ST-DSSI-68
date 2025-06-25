@@ -10,8 +10,7 @@
 - pip install -r requirements.txt
 
 **4. เข้าไปในโฟลเดอร์ theme และ static_src และติดตั้ง npm dependencies**   
-- cd theme
-- cd static_src
+- cd theme/static_src
 - npm install
 
 **5. กลับมาที่โฟลเดอร์หลักของโปรเจค** 
