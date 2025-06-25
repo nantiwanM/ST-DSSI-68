@@ -42,3 +42,10 @@
 **10. รัน Django Server**
 - python manage.py runserver
 
+==เพิ่มเติม==
+
+**11. คำสั่งที่ใช้สร้าง Super Admin เพื่อเข้าจัดการข้อมูล Django**
+- python manage.py createsuperuser
+- ชื่อผู้ใช้: admin
+- email: admin@gmail.com
+- รหัส: 1234
