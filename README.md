@@ -31,7 +31,6 @@
 - และทำการแก้ไขให้ชื่อผู้ใช้งาน MySQL และ รหัสผ่านของผู้ใช้งานตรงในไฟล์ settings.py ส่วน DATABASES ที่บรรทัดที่ 96
 
   ทำการ migrate database
-  -  python manage.py makemigrations
   -  python manage.py migrate
 
 **9. เริ่มต้น Tailwind CSS**
@@ -39,6 +38,8 @@
 
 **10. รัน Django Server**
 - python manage.py runserver
+
+
 
 ==เพิ่มเติม==
 
