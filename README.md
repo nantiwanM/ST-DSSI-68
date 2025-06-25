@@ -1,5 +1,5 @@
 **1. Clone โปรเจคจาก GitHub**
-- gh repo clone nantiwanM/ST-DSSI-68
+- gh repo clone nantiwanM/ST-DSSI-68 หรือ git clone https://github.com/nantiwanM/ST-DSSI-68.git
 - cd ST-DSSI-68
 
 **2. สร้าง virtual environment สำหรับ Windows ใน cmd**  
