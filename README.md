@@ -2,7 +2,7 @@
 - gh repo clone nantiwanM/ST-DSSI-68
 - cd ST-DSSI-68
 
-**2. สร้าง virtual environment สำหรับ Windows**  
+**2. สร้าง virtual environment สำหรับ Windows ใน cmd**  
 - python -m venv venv
 - venv\Scripts\activate
 
@@ -28,6 +28,9 @@
   ให้ไปทำข้อที่ 9 ได้เลย
   
 **8. ถ้าใช้ database MySql**
+
+- ใน MySQL Workbench ต้องมี Schema ชื่อ **cnstyleshop**
+- และทำการแก้ไขให้ชื่อผู้ใช้งาน MySQL และ รหัสผ่านของผู้ใช้งานตรงในไฟล์ settings.py ส่วน DATABASES ที่บรรทัดที่ 96
 
   ทำการ migrate database
   -  python manage.py makemigrations
