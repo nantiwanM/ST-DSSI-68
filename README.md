@@ -1,3 +1,7 @@
+ติดตั้งด้วยคำสั่ง `pip install -r requirements.txt`
+
+
+
 **1. Clone โปรเจคจาก GitHub**
 - gh repo clone nantiwanM/ST-DSSI-68 หรือ git clone https://github.com/nantiwanM/ST-DSSI-68.git
 - cd ST-DSSI-68
