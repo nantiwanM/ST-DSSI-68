@@ -55,10 +55,13 @@
 ```bash
 docker compose up -d --build
 ```
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1ee826ae-a789-4850-a311-c89858bc12df" alt="clone" width="700"/>
+</p>
 
 #### 4. เข้าใช้งาน
 เปิดเว็บเบราว์เซอร์แล้วเข้า:: http://localhost:8000
-
+>หากหน้าเว็บยังไม่ขึ้นทันที ให้รอสักครู่
 ---
 
 ## :gear: 2. ติดตั้งและรันโปรเจกต์แบบปกติ
