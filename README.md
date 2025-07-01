@@ -94,6 +94,15 @@
 #### 6. ตั้งค่า Database
 
 - สร้าง Schema ชื่อ **cnstyleshop** ใน MySQL Workbench
+>ขั้นตอน สร้าง Schema
+>เปิด MySQL Workbench
+>ในหน้า MySQL Workbench Home, คลิกที่ Connection ที่ชื่อว่า Local instance MySQL (หรือชื่ออื่นที่คุณเคยตั้งไว้)
+>ป้อน รหัสผ่าน (Password) โดยรหัสคือตอนที่ติกตั้งไว้ รอจนเข้าได้ จะเห็นหน้าต่าง Query Editor ที่มีแท็บ SQL
+>ดูแถบด้านซ้าย (ซ้ายบน) ที่ชื่อว่า SCHEMAS
+>ช่อง Name: ให้พิมพ์ **cnstyleshop**
+>คลิกปุ่ม Apply จะมีหน้าต่าง SQL Preview ขึ้นมา → กด Apply อีกครั้ง มื่อเห็นข้อความ Success → กด Finish
+
+
 - แก้ไขข้อมูลผู้ใช้ (username) และรหัสผ่านของ MySQL ในไฟล์ `settings.py`
   ที่ส่วน `DATABASES` (บรรทัดที่ 96)
 - รันคำสั่ง migrate เพื่อสร้างตารางในฐานข้อมูล
