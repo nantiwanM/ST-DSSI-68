@@ -7,7 +7,7 @@
 ## :gear: 1. ติดตั้งและรันโปรเจกต์ด้วย Docker
 >ไม่ต้องติดตั้ง Python, Node.js, MySQL บนเครื่อง เพียงแค่มี Docker ก็สามารถรันโปรเจกต์นี้ได้ทันที
 
-#### 1. ติดตั้ง Docker
+#### 1. ติดตั้ง Docker และเปิดการใช้งาน
 - ดาวน์โหลด: https://docs.docker.com/desktop/setup/install/windows-install/
 - ตรวจสอบเวอร์ชัน:
   ```bash
