@@ -1,4 +1,19 @@
+# CN Style Shop Web Application
 
+เว็บแอปพลิเคชันสำหรับขายเสื้อผ้าแฟชั่นออนไลน์จากประเทศจีน พัฒนาด้วย Django เป็น Framework หลักในการพัฒนา ร่วมกับฐานข้อมูล MySQL และใช้ HTML CSS JavaScript HTMX Tailwind CSS และ Daisy UI ในการออกแบบและตกแต่งหน้าเว็บ
+
+---
+
+### Prerequisites (สิ่งที่ต้องเตรียมก่อนเริ่มต้น)
+ก่อนเริ่มติดตั้งโปรเจกต์นี้ กรุณาตรวจสอบว่าเครื่องของคุณมีเครื่องมือและซอฟต์แวร์ดังต่อไปนี้
+
+#### 1. Python 3.8 ขึ้นไป
+- ดาวน์โหลดจาก: https://www.python.org/downloads/
+- ตรวจสอบเวอร์ชัน:
+    
+  ```bash
+  python --version
+  ``` 
 
 **1. Clone โปรเจคจาก GitHub**
 - gh repo clone nantiwanM/ST-DSSI-68 หรือ git clone https://github.com/nantiwanM/ST-DSSI-68.git
