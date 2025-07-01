@@ -10,10 +10,10 @@
 #### 1. Python 3.8 ขึ้นไป
 - ดาวน์โหลดจาก: https://www.python.org/downloads/
 - ตรวจสอบเวอร์ชัน:
-    
-  ```bash
-  python --version
-  ``` 
+
+    ```bash
+      python --version
+    ``` 
 
 **1. Clone โปรเจคจาก GitHub**
 - gh repo clone nantiwanM/ST-DSSI-68 หรือ git clone https://github.com/nantiwanM/ST-DSSI-68.git
