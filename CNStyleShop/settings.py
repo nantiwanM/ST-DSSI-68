@@ -103,7 +103,7 @@ DATABASES = {
         'NAME': 'cnstyleshop',               # ชื่อ Schema ที่สร้างใน Workbench
         'USER': 'root',                      # ชื่อผู้ใช้ที่สร้างไว้
         'PASSWORD': 'root',                  # รหัสผ่านของผู้ใช้
-        'HOST': '127.0.0.1',                 # ใช้ localhost หรือ IP เซิร์ฟเวอร์
+        'HOST': 'db',                        # ใช้ localhost ถ้าเป็นของ docker ใช้ชื่อ db
         'PORT': '3306',                      # พอร์ตของ MySQL (ค่าเริ่มต้นคือ 3306)
         'OPTIONS': {
             'charset': 'utf8mb4',            # รองรับภาษาไทย
