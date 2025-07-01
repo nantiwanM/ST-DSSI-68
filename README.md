@@ -1,5 +1,3 @@
-ติดตั้งด้วยคำสั่ง `pip install -r requirements.txt`
-
 
 
 **1. Clone โปรเจคจาก GitHub**
