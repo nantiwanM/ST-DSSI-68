@@ -2,18 +2,19 @@
 
 เว็บแอปพลิเคชันสำหรับขายเสื้อผ้าแฟชั่นออนไลน์จากประเทศจีน พัฒนาด้วย Django เป็น Framework หลักในการพัฒนา ร่วมกับฐานข้อมูล MySQL และใช้ HTML CSS JavaScript HTMX Tailwind CSS และ Daisy UI ในการออกแบบและตกแต่งหน้าเว็บ
 
----
+<br>
 
-## :gear: 1. ติดตั้งและรันโปรเจกต์ด้วย Docker
+## :gear: วิธีติดตั้งและรันโปรเจกต์
+###  ตัวเลือกที่ 1: รันด้วย Docker (แนะนำ)
 >ไม่ต้องติดตั้ง Python, Node.js, MySQL บนเครื่อง เพียงแค่มี Docker ก็สามารถรันโปรเจกต์นี้ได้ทันที
 
-#### 1. ติดตั้ง Docker และเปิดการใช้งาน
+#### 1.1 ติดตั้ง Docker และเปิดการใช้งาน
 - ดาวน์โหลด: https://docs.docker.com/desktop/setup/install/windows-install/
 - ตรวจสอบเวอร์ชัน:
   ```bash
   docker --version
   ````
-#### 2. Clone โปรเจกต์จาก GitHub
+#### 1.2 Clone โปรเจกต์จาก GitHub
 
 - ใช้คำสั่ง:
 
@@ -31,27 +32,26 @@
   ```bash
   cd ST-DSSI-68
   ```
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/b563d7ba-1cb2-4a0c-b032-d7fcf3613119" alt="clone" width="500"/>
-</p>
-
-#### 3. รันโปรเจกต์ด้วย Docker
-
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/b563d7ba-1cb2-4a0c-b032-d7fcf3613119" alt="clone" width="500"/>
+  </p>
+  
+#### 1.3 ตรวจสอบพอร์ต (8000, 3306)
 > ⚠️ **ตรวจสอบพอร์ตก่อนรัน**
-> เปิด Command Prompt หรือ PowerShell ใช้คำสั่งตรวจสอบพอร์ต 8000 (เว็บ) และ 3306 (MySQL) ว่างหรือไม่:
+> เปิด Command Prompt หรือ PowerShell ใช้คำสั่งตรวจสอบพอร์ต 8000 (เว็บ) และ 3306 (MySQL) ว่างหรือไม่
 >
 > ```bash
 > netstat -aon | findstr :8000
 > netstat -aon | findstr :3306
 > ```
 >
-> ถ้าแสดง PID แปลว่าพอร์ตกำลังถูกใช้งาน
->
-> * ให้ปิดโปรแกรมที่ใช้พอร์ตนี้ หรือ เปลี่ยนพอร์ตใน `docker-compose.yml` เช่น `"8001:8000"` หรือ `3307:3306`
+> ถ้ามีผลลัพธ์ แปลว่าพอร์ตกำลังถูกใช้งาน
+> ให้ปิดโปรแกรมที่ใช้พอร์ตนี้ หรือ เปลี่ยนพอร์ตใน `docker-compose.yml` เช่น `"8001:8000"` หรือ `3307:3306`
 >
 > **หมายเหตุ:** หากเปลี่ยนพอร์ต MySQL ให้แก้การตั้งค่าฐานข้อมูลในโปรเจกต์ให้ตรงด้วย
 
-ใช้คำสั่ง:
+
+#### 1.4 รันโปรเจกต์ด้วย Docker
 ```bash
 docker compose up -d --build
 ```
@@ -59,12 +59,17 @@ docker compose up -d --build
   <img src="https://github.com/user-attachments/assets/1ee826ae-a789-4850-a311-c89858bc12df" alt="clone" width="700"/>
 </p>
 
-#### 4. เข้าใช้งาน
+#### 1.5 เข้าใช้งาน
 เปิดเว็บเบราว์เซอร์แล้วเข้า:: http://localhost:8000
->หากหน้าเว็บยังไม่ขึ้นให้รอสักครู่
+>หากหน้าเว็บยังไม่ขึ้นให้รอสักครู่ และลองรีเฟรชหน้าเว็บอีกครั้ง
+
+<br>
+
 ---
 
-## :gear: 2. ติดตั้งและรันโปรเจกต์แบบปกติ
+<br>
+
+## ตัวเลือกที่ 2: ติดตั้งและรันแบบปกติ
 
 ### :memo: 2.1 Requirements (ข้อกำหนดเบื้องต้น)
 ก่อนเริ่มติดตั้งโปรเจกต์นี้ กรุณาตรวจสอบว่าเครื่องของคุณมีเครื่องมือและซอฟต์แวร์ดังต่อไปนี้
@@ -91,7 +96,7 @@ docker compose up -d --build
 - ดาวน์โหลด MySQL Community Server (แนะนำเวอร์ชัน 8.0.42 ขึ้นไป): https://dev.mysql.com/downloads/mysql/
 - ดาวน์โหลด MySQL Workbench: https://dev.mysql.com/downloads/workbench/
 
----
+<br>
 
 ### :gear: 2.2 ขั้นตอนติดตั้ง
 
