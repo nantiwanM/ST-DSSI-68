@@ -5,6 +5,7 @@
 <br>
 
 ## :gear: วิธีติดตั้งและรันโปรเจกต์
+
 ###  ตัวเลือกที่ 1: รันด้วย Docker (แนะนำ)
 >ไม่ต้องติดตั้ง Python, Node.js, MySQL บนเครื่อง เพียงแค่มี Docker ก็สามารถรันโปรเจกต์นี้ได้ทันที
 
@@ -74,14 +75,14 @@ docker compose up -d --build
 #### :memo: 2.1 Requirements (ข้อกำหนดเบื้องต้น)
 ก่อนเริ่มติดตั้งโปรเจกต์นี้ กรุณาตรวจสอบว่าเครื่องของคุณมีเครื่องมือและซอฟต์แวร์ดังต่อไปนี้
 
-1. Python (เวอร์ชัน 3.8 ขึ้นไป)
+**1. Python (เวอร์ชัน 3.8 ขึ้นไป)**
 - ดาวน์โหลด: https://www.python.org/downloads/
 - ตรวจสอบเวอร์ชัน:
   ```bash
   python --version
   ````
 
-#### 2. Node.js
+**2. Node.js**
 >Tailwind CSS ใช้ Node.js และ npm สำหรับจัดการ frontend dependencies และคอมไพล์ CSS
 - ดาวน์โหลด: https://nodejs.org/en/download
 - ตรวจสอบเวอร์ชัน:
@@ -91,16 +92,16 @@ docker compose up -d --build
     npm -v
     ```
 
-#### 3. MySQL และ MySQL Workbench 
+**3. MySQL และ MySQL Workbench** 
 >ขณะติดตั้งผ่าน MySQL Installer จะมีขั้นตอนให้ตั้งรหัสผ่านของผู้ใช้ `root` กรุณาจดหรือบันทึกรหัสผ่านนี้ไว้ เนื่องจากจำเป็นต้องใช้ในการเชื่อมต่อฐานข้อมูล
 - ดาวน์โหลด MySQL Community Server (แนะนำเวอร์ชัน 8.0.42 ขึ้นไป): https://dev.mysql.com/downloads/mysql/
 - ดาวน์โหลด MySQL Workbench: https://dev.mysql.com/downloads/workbench/
 
 <br>
 
-### :gear: 2.2 ขั้นตอนติดตั้ง
+#### :gear: 2.2 ขั้นตอนติดตั้ง
 
-#### 1. Clone โปรเจกต์จาก GitHub
+**1. Clone โปรเจกต์จาก GitHub**
 
 - ใช้คำสั่ง:
 
@@ -122,8 +123,7 @@ docker compose up -d --build
   <img src="https://github.com/user-attachments/assets/b563d7ba-1cb2-4a0c-b032-d7fcf3613119" alt="clone" width="500"/>
 </p>
 
-
-#### 2. สร้าง virtual environment และเปิดใช้งาน (สำหรับ Windows)
+**2. สร้าง virtual environment และเปิดใช้งาน (สำหรับ Windows)**
 
   ```bash
   python -m venv venv
@@ -133,7 +133,7 @@ docker compose up -d --build
   <img src="https://github.com/user-attachments/assets/408d3121-8647-4646-ba86-2d90d97322d2" alt="environment" width="500"/>
 </p>
 
-#### 3. ติดตั้ง Python dependencies
+**3. ติดตั้ง Python dependencies**
 
   ```bash
   pip install -r requirements.txt
@@ -142,7 +142,7 @@ docker compose up -d --build
   <img src="https://github.com/user-attachments/assets/c0d8f157-66de-499d-b30c-7e18196f1e25" alt="install requirements" width="500"/>
 </p>
 
-#### 4. ติดตั้ง npm dependencies สำหรับ Tailwind CSS
+**4. ติดตั้ง npm dependencies สำหรับ Tailwind CSS**
 
 - เข้าไปยังโฟลเดอร์ที่เก็บไฟล์ frontend
 
@@ -164,9 +164,9 @@ docker compose up -d --build
   
   >จากนั้นเปิดโปรเจกต์ด้วยโปรแกรมแก้ไขโค้ดที่คุณสะดวก (เช่น VS Code, PyCharm ฯลฯ) หากใช้ VS Code สามารถใช้คำสั่ง: `code .`
 
-#### 5. ตั้งค่า Database
+**5. ตั้งค่า Database**
 
-##### 5.1 สร้าง Schema ชื่อ `cnstyleshop` ใน MySQL Workbench
+5.1 สร้าง Schema ชื่อ `cnstyleshop` ใน MySQL Workbench
 >เปิด MySQL Workbench
 >คลิกที่ Connection ที่ชื่อว่า Local instance MySQL (หรือชื่ออื่นที่คุณเคยตั้งไว้)
 >ใส่รหัสผ่าน MySQL (ตั้งไว้ตอนติดตั้ง MySQL) เพื่อเข้าสู่หน้าหลัก
@@ -183,7 +183,7 @@ docker compose up -d --build
   <img src="https://github.com/user-attachments/assets/f9d4e47f-43cc-47f8-94e8-df91f3e3287b" alt="MySQL1" width="700"/>
 </p>
 
-##### 5.2 แก้ไขการเชื่อมต่อฐานข้อมูลใน Django
+5.2 แก้ไขการเชื่อมต่อฐานข้อมูลใน Django
 >ไปที่โปรเจกต์ Django (โฟลเดอร์ CNStyleShop) เปิดไฟล์ settings.py ไปที่ส่วน DATABASES (บรรทัดที่ 96–112) และทำการแก้ไข HOST ให้เป็น `root` และ PASSWORD ให้ตรงกับที่ตั้งไว้ตอนติดตั้ง MySQL
 
 <p align="center">
@@ -206,7 +206,7 @@ docker compose up -d --build
 > DATABASES['default'] = DATABASES['sqlite3']
 > ```
 
-#### 6. รัน Tailwind CSS
+**6. รัน Tailwind CSS**
 
   ```bash
   python manage.py tailwind start
@@ -215,7 +215,7 @@ docker compose up -d --build
   <img src="https://github.com/user-attachments/assets/a761fb5f-3b14-4009-839a-7a27c1b2e610" alt="tailwind start" width="700"/>
 </p>
 
-#### 7. รัน Django
+**7. รัน Django**
 >เปิดอีกหน้าต่างหนึ่งของ PowerShell หรือ Command Prompt แล้วรันคำสั่ง
 
   ```bash
