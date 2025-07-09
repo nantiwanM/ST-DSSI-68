@@ -11,11 +11,6 @@ venv/
 .env/
 .env.local
 
-# Node.js
-node_modules/
-theme/static_src/node_modules/
-npm-debug.log
-
 # PyCharm
 .idea/
 
