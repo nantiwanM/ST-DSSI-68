@@ -15,8 +15,8 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# คัดลอกไฟล์เฉพาะ package.json กับ lockfile ก่อน เพื่อให้ Docker ใช้ cache
-COPY theme/static_src/package*.json ./theme/static_src/
+# คัดลอก package.json ไ
+COPY theme/static_src/package*.json /app/theme/static_src/
 
 # ติดตั้ง npm dependencies
 WORKDIR /app/theme/static_src
