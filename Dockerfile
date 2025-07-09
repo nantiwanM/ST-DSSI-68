@@ -1,6 +1,6 @@
 FROM python:3.12
 
-# ติดตั้ง Node.js และ npm และ mysqladmin
+# ติดตั้ง Node.js, npm และ mysql client
 RUN apt-get update && \
     apt-get install -y curl default-mysql-client && \
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
@@ -11,16 +11,20 @@ RUN apt-get update && \
 # ตั้ง working directory
 WORKDIR /app
 
-# ติดตั้ง Python dependencies (ใช้ cache)
+# ติดตั้ง Python dependencies
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# คัดลอก source code ทั้งหมด
-COPY . .
+# คัดลอกไฟล์เฉพาะ package.json กับ lockfile ก่อน เพื่อให้ Docker ใช้ cache
+COPY theme/static_src/package*.json ./theme/static_src/
 
 # ติดตั้ง npm dependencies
 WORKDIR /app/theme/static_src
 RUN npm install
 
-# กลับมา working directory หลัก
+# คัดลอก source code ที่เหลือ
+WORKDIR /app
+COPY . .
+
+# กลับ working dir หลัก
 WORKDIR /app
