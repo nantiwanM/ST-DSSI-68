@@ -15,7 +15,7 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# คัดลอก package.json ไ
+# คัดลอก package.json
 COPY theme/static_src/package*.json /app/theme/static_src/
 
 # ติดตั้ง npm dependencies
@@ -25,6 +25,3 @@ RUN npm install
 # คัดลอก source code ที่เหลือ
 WORKDIR /app
 COPY . .
-
-# กลับ working dir หลัก
-WORKDIR /app
