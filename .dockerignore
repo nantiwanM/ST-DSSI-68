@@ -28,3 +28,8 @@ docker-compose.yml
 .dockerignore
 
 *.db
+
+# Node.js
+node_modules/
+theme/static_src/node_modules/
+npm-debug.log
