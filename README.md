@@ -50,7 +50,7 @@
 > **ถ้าไม่มีผลลัพธ์ แปลว่าพอร์ตงานได้** ถ้ามีผลลัพธ์ แปลว่าพอร์ตกำลังถูกใช้งาน
 > ให้ปิดโปรแกรมที่ใช้พอร์ตนี้ หรือ เปลี่ยนพอร์ตใน `docker-compose.yml` เป็น ports: `8080:8000` หรือ `3306:3306`
 >
-> **หมายเหตุ:** หากเปลี่ยนพอร์ต MySQL **ไม่ต้อง**แก้ไขพอร์ตใน settings.py ในโปรเจกต์
+> **หมายเหตุ:** หากเปลี่ยนพอร์ต MySQL **ไม่ต้อง**แก้ไขพอร์ตใน .env ในโปรเจกต์
 
 
 #### 1.4 รันโปรเจกต์ด้วย Docker
@@ -188,7 +188,7 @@ docker compose up -d
 >ไปที่โปรเจกต์ Django เปิดไฟล์ .env ไปที่ส่วน DATABASES (บรรทัดที่ 2–6) และทำการแก้ไข DB_HOST ให้เป็น `localhost` และ PASSWORD ให้ตรงกับที่ตั้งไว้ตอนติดตั้ง MySQL
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4b35fd8a-5db5-42b6-a858-3541b11aa8cf" alt="MySQL1" width="700"/>
+  <img src="https://github.com/user-attachments/assets/82ef3bf4-de7a-4638-917b-63863e68715f" alt="MySQL1" width="700"/>
 </p>
 
 รันคำสั่ง migrate เพื่อสร้างตารางในฐานข้อมูล
