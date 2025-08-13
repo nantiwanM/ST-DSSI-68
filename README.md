@@ -196,9 +196,6 @@ docker compose up -d
   ```bash
   python manage.py migrate
   ```
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/45223bff-aa7a-416a-a1f4-b7c9fdf933c0" alt="migrate" width="700"/>
-</p>
 
 >  :warning: **ถ้าไม่มี MySQL ติดตั้งไว้**<br>
 > สามารถใช้ SQLite แทนได้ง่ายๆ โดยแก้ไฟล์ `settings.py`บรรทัดที่ 113
