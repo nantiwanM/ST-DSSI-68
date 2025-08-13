@@ -9,17 +9,24 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import platform
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# โหลด .env
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+environ.Env.read_env(BASE_DIR / '.env')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-g==fdl%rcf0s#t-ejx+-v0)iq5=8vf#(lmv*h$&-_ck1_-&1#z"
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -100,13 +107,13 @@ DATABASES = {
     },
     'mysql': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cnstyleshop',               # ชื่อ Schema ที่สร้างใน Workbench
-        'USER': 'root',                      # ชื่อผู้ใช้ที่สร้างไว้
-        'PASSWORD': 'root',                  # รหัสผ่านของผู้ใช้
-        'HOST': 'db',                        # ใช้ localhost ถ้าเป็นของ docker ใช้ชื่อ db
-        'PORT': '3306',                      # พอร์ตของ MySQL (ค่าเริ่มต้นคือ 3306)
+        'NAME': env('DB_NAME'),                     # ชื่อ Schema ที่สร้างใน Workbench
+        'USER': env('DB_USER'),                     # ชื่อผู้ใช้ที่สร้างไว้
+        'PASSWORD': env('DB_PASSWORD'),             # รหัสผ่านของผู้ใช้
+        'HOST': env('DB_HOST'),                     # ปกติใช้ localhost แต่ถ้าใช้ docker ใช้ชื่อ db
+        'PORT': env('DB_PORT'),                     # พอร์ตของ MySQL (ค่าเริ่มต้นคือ 3306)
         'OPTIONS': {
-            'charset': 'utf8mb4',            # รองรับภาษาไทย
+            'charset': 'utf8mb4',                   # รองรับภาษาไทย
         },
     },
 }

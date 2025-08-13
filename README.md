@@ -55,7 +55,7 @@
 
 #### 1.4 รันโปรเจกต์ด้วย Docker
 ```bash
-docker compose up -d --build
+docker compose up -d
 ```
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1ee826ae-a789-4850-a311-c89858bc12df" alt="clone" width="700"/>
@@ -185,7 +185,7 @@ docker compose up -d --build
 </p>
 
 5.2 แก้ไขการเชื่อมต่อฐานข้อมูลใน Django
->ไปที่โปรเจกต์ Django (โฟลเดอร์ CNStyleShop) เปิดไฟล์ settings.py ไปที่ส่วน DATABASES (บรรทัดที่ 96–112) และทำการแก้ไข HOST ให้เป็น `root` และ PASSWORD ให้ตรงกับที่ตั้งไว้ตอนติดตั้ง MySQL
+>ไปที่โปรเจกต์ Django เปิดไฟล์ .env ไปที่ส่วน DATABASES (บรรทัดที่ 2–6) และทำการแก้ไข DB_HOST ให้เป็น `localhost` และ PASSWORD ให้ตรงกับที่ตั้งไว้ตอนติดตั้ง MySQL
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4b35fd8a-5db5-42b6-a858-3541b11aa8cf" alt="MySQL1" width="700"/>
@@ -196,7 +196,6 @@ docker compose up -d --build
   ```bash
   python manage.py migrate
   ```
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/45223bff-aa7a-416a-a1f4-b7c9fdf933c0" alt="migrate" width="700"/>
 </p>
@@ -212,6 +211,7 @@ docker compose up -d --build
   ```bash
   python manage.py tailwind start
   ```
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a761fb5f-3b14-4009-839a-7a27c1b2e610" alt="tailwind start" width="700"/>
 </p>

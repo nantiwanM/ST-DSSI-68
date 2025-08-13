@@ -9,11 +9,10 @@ services:
     depends_on:
       - db
     restart: always
+    env_file:
+      - .env
     command: >
       sh -c "
-      until mysqladmin ping -h db -u root -proot --silent; do
-        echo 'Waiting for MySQL...'; sleep 2;
-      done;
       python manage.py migrate &&
       python manage.py tailwind start &&
       python manage.py runserver 0.0.0.0:8000
@@ -22,8 +21,8 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: cnstyleshop
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
     ports:
       - "3307:3306"
     volumes:
