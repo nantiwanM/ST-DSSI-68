@@ -58,7 +58,7 @@
 docker compose up -d
 ```
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1ee826ae-a789-4850-a311-c89858bc12df" alt="clone" width="700"/>
+  <img src="https://github.com/user-attachments/assets/f006d794-772f-4d1b-b82a-fc91ef0a5fb5" alt="clone" width="500"/>
 </p>
 
 #### 1.5 เข้าใช้งาน
