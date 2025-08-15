@@ -22,7 +22,7 @@ COPY theme/static_src/package*.json /app/theme/static_src/
 
 # ติดตั้ง npm dependencies
 WORKDIR /app/theme/static_src
-RUN npm install
+RUN npm install && npm run build
 
 # คัดลอก source code ที่เหลือ
 WORKDIR /app
