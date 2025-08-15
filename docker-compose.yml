@@ -5,7 +5,6 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
-      - node_modules:/app/theme/static_src/node_modules
     depends_on:
       - db
     restart: always
