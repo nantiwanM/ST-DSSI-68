@@ -1,28 +1,27 @@
-### Stage 1: Frontend (Tailwind)
-FROM node:20 AS frontend
-
-WORKDIR /app/theme/static_src
-
-# ติดตั้ง dependencies
-COPY theme/static_src/package*.json ./
-RUN npm install
-
-COPY /theme/static_src ./
-RUN npm run build
-
-### Stage 2: Backend (Python + Django)
 FROM python:3.12
 
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+# ติดตั้ง Node.js, npm 
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g npm@latest && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# ตั้ง working directory
 WORKDIR /app
 
-# Python requirements
+# ติดตั้ง Python dependencies
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# คัดลอก package.json
+COPY theme/static_src/package*.json /app/theme/static_src/
 
-# คัดลอกไฟล์ static/dist ที่ build แล้วจาก frontend stage
-COPY --from=frontend /app/theme/static/css/dist /app/theme/static/css/dist
+# ติดตั้ง npm dependencies
+WORKDIR /app/theme/static_src
+RUN npm install
+
+# คัดลอก source code ที่เหลือ
+WORKDIR /app
+COPY . .
