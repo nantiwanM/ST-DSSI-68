@@ -28,11 +28,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = [
-    'localhost', 
-    '127.0.0.1', 
-    '0.0.0.0'
-    ]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -95,11 +91,13 @@ TEMPLATES = [
 WSGI_APPLICATION = "CNStyleShop.wsgi.application"
 
 TAILWIND_APP_NAME = 'theme'
-if platform.system() == "Windows":
-    NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
-else:
-    # ถ้าใช้ Docker/Linux ให้ปล่อยว่าง หรือระบุ path ที่ถูกต้องใน container
-    NPM_BIN_PATH = "/usr/bin/npm"
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+
+# if platform.system() == "Windows":
+#     NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+# else:
+#     # ถ้าใช้ Docker/Linux ให้ปล่อยว่าง หรือระบุ path ที่ถูกต้องใน container
+#     NPM_BIN_PATH = "/usr/bin/npm"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
