@@ -15,18 +15,22 @@ services:
     command: >
       sh -c "
       python manage.py migrate &&
-      exec python manage.py runserver 0.0.0.0:8000
+      python manage.py collectstatic --noinput &&
+      python manage.py loaddata fixtures/users.json &&
+      gunicorn CNStyleShop.wsgi:application --bind 0.0.0.0:8000 --workers 3
       "
+
   db:
-    image: mysql:8.0
+    image: postgres:16
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_NAME}
-    ports:
-      - "3307:3306"
+      POSTGRES_DB: cnstyleshop
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
     volumes:
-      - mysql_data:/var/lib/mysql
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
 volumes:
-  mysql_data:
+  postgres_data:

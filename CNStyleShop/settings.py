@@ -28,11 +28,21 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
+# อนุญาตให้เว็บเข้าถึงจาก host ไหน
 ALLOWED_HOSTS = [
-    'localhost', 
-    '127.0.0.1', 
-    '0.0.0.0'
-    ]
+    'localhost',
+    '127.0.0.1',
+    '202.28.49.122',
+    #'07238ce9b464.ngrok-free.app'
+]
+
+# อนุญาตให้ POST/form request มาจากเว็บ/port ไหน
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8080",        # สำหรับ dev port ของคุณ
+    "http://127.0.0.1:8080",
+    "http://202.28.49.122:8080",    # สำหรับ server IP + port ของคุณ
+    #"https://07238ce9b464.ngrok-free.app"
+]
 
 # Application definition
 INSTALLED_APPS = [
@@ -52,25 +62,31 @@ INSTALLED_APPS = [
 
     "tailwind",
     "theme",
-    "django_browser_reload",
 
     "tinymce"
 ]
 
+# ถ้า mode Dev เพิ่ม django_browser_reload
+if DEBUG:
+    INSTALLED_APPS += ["django_browser_reload"]
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+"whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
 
     # เพิ่ม Middleware ป้องกันผู้ใช้ทั่วไปเข้าหน้า admin
     "accounts.middleware.AdminOnlyMiddleware",
-    "accounts.middleware.RedirectCartAddMiddleware",
 ]
+
+# ถ้า mode Dev เพิ่ม django_browser_reload
+if DEBUG:
+    MIDDLEWARE += ["django_browser_reload.middleware.BrowserReloadMiddleware"]
 
 ROOT_URLCONF = "CNStyleShop.urls"
 
@@ -121,8 +137,16 @@ DATABASES = {
             'charset': 'utf8mb4',                   # รองรับภาษาไทย
         },
     },
+    'postgresql': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cnstyleshop',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'db',
+        'PORT': 5432,
+    },
 }
-DATABASES['default'] = DATABASES['mysql']
+DATABASES['default'] = DATABASES['postgresql']
 
 AUTH_USER_MODEL = 'accounts.UserProfile'
 
@@ -159,10 +183,14 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / "static",
 ]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Media settings
 MEDIA_URL = '/media/'  # URL สำหรับเข้าถึงไฟล์
@@ -183,9 +211,3 @@ TINYMCE_DEFAULT_CONFIG = {
     'content_style': 'body {  background-color: #f5f5f5; }',  # กำหนดสีพื้นหลังและกรอบ
 
 }
-
-# ALLOWED_HOSTS = [
-#     '7640-49-231-194-158.ngrok-free.app',
-#     'localhost',
-#     '127.0.0.1'
-# ]
