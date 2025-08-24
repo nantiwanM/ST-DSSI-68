@@ -15,8 +15,11 @@ services:
     command: >
       sh -c "
       python manage.py migrate &&
+      echo 'Step 2: Collecting static files...' &&
       python manage.py collectstatic --noinput &&
+      echo 'Step 3: Loading user fixtures...' &&
       python manage.py loaddata fixtures/users.json &&
+      echo 'Step 4: Starting Gunicorn server...' &&
       gunicorn CNStyleShop.wsgi:application --bind 0.0.0.0:8000 --workers 3
       "
 

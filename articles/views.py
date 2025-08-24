@@ -88,9 +88,9 @@ class ArticleDeleteView(LoginRequiredMixin, DeleteView):
         # ดึงข้อมูลบทความที่ต้องการลบ
         article = self.get_object()
 
-        # ลบรูปภาพปกของบทความ (image) ออกจากระบบไฟล์ (filesystem) ของเซิร์ฟเวอร์
+        # ลบรูปภาพปกของบทความ (image) ออกจากระบบไฟล์ (filesystem) ของเซิร์ฟเวอร์ สำหรับ mode Dev
         # เรียกฟังก์ชัน delete_file เพื่อลบไฟล์รูปภาพบทความ
-        delete_file(article.image.path)
+        #delete_file(article.image.path)
 
         # ลบบทความออกจากฐานข้อมูล
         article.delete()
