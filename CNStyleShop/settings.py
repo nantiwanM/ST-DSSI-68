@@ -38,9 +38,9 @@ ALLOWED_HOSTS = [
 
 # อนุญาตให้ POST/form request มาจากเว็บ/port ไหน
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:8080",        # สำหรับ dev port ของคุณ
-    "http://127.0.0.1:8080",
-    "http://202.28.49.122:8080",    # สำหรับ server IP + port ของคุณ
+    "http://localhost:8000",        # สำหรับ dev port ของคุณ
+    "http://127.0.0.1:8000",
+    "http://202.28.49.122:8000",    # สำหรับ server IP + port ของคุณ
     #"https://07238ce9b464.ngrok-free.app"
 ]
 
